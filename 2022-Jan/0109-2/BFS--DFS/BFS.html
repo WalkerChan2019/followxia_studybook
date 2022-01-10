@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+        <li>
+            <a href="">
+                <img src="" alt="">
+                <div class="wk"></div>
+            </a>
+        </li>
+        <li>
+            <span></span>
+        </li>
+        <li>
+        </li>
+    </ul>
+    <p></p>
+    <button></button>
+  </div>
+  <script>
+      // function breadthFirstSearch(node) {
+      //     var nodes = [];
+      //     var i = 0;
+      //     if (!(node == null)) {
+      //         nodes.push(node);
+      //         breadthFirstSearch(node.nextElementSibling);
+      //         node = nodes[i++];
+      //         breadthFirstSearch(node.firstElementChild);
+      //     }
+      //     return nodes;
+      // }
+
+      function breadthFirstSearch(node) {  
+          var nodes = [];  
+          if (node != null) {  
+              var queue = [];  
+              queue.unshift(node);  
+              while (queue.length != 0) {  
+                  var item = queue.shift();  
+                  nodes.push(item);  
+                  var children = item.children;  
+                  for (var i = 0; i < children.length; i++)  
+                      queue.push(children[i]);  
+              }  
+          }  
+          return nodes;  
+      }
+
+      let root = document.getElementById('root')
+      console.log(breadthFirstSearch(root,nodeList=[]));
+  </script>
+</body>
+</html>
